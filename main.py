@@ -3,7 +3,7 @@ from mysql.connector import Error
 from datetime import datetime
 import json
 from db import add_db, get_data_by_date
-
+#async
 def is_numeric(input_string):
     try:
         float(input_string)

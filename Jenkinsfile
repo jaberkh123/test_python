@@ -6,7 +6,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // کلون کردن مخزن
-                git 'https://github.com/USERNAME/REPOSITORY.git'
+                git 'https://github.com/jaberkh123/test_python.git'
             }
         }
 

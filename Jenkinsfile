@@ -25,6 +25,7 @@ pipeline {
 
         stage('Commit Changes') {
             steps {
+                sh 'ls'
                 sh 'git config user.name jaberkh123'
                 sh 'git config user.email jaber.khorramshahi@gmail.com'
                 sh 'git add .'

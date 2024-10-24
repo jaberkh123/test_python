@@ -12,6 +12,7 @@ pipeline {
             steps {
                 // Check if target branch exists, if not create it
                 script {
+                    sh 'git branch -r'
                     def branches = sh(script: 'git branch -r', returnStdout: true).trim()
                     if (!branches.contains("target")) {
                         sh 'git checkout -b target' // Create new branch

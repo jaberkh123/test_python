@@ -28,7 +28,7 @@ pipeline {
                 sh 'git remote -v'
                 sh 'ls'
                 sh 'touch nething'
-                sh 'echo 'jaber' > nething '
+                sh 'echo jaber > nething '
                 sh 'git config user.name jaberkh123'
                 sh 'git config user.email jaber.khorramshahi@gmail.com'
                 sh 'git add .'

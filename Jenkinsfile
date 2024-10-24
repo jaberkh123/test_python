@@ -21,7 +21,7 @@ pipeline {
         stage('Create New Branch') {
             steps {
                 // ساخت برنچ جدید بر پایه برنچ main
-                sh 'git checkout -b target'
+                sh 'git checkout target'
                 // نمایش برنچ‌های موجود برای اطمینان
                 sh 'git branch'
             }

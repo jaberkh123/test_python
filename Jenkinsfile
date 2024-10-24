@@ -25,6 +25,7 @@ pipeline {
 
         stage('Commit Changes') {
             steps {
+                sh 'git remote set-url origin git@github.com:jaberkh123/test_python.git'
                 sh 'git remote -v'
                 sh 'ls'
                 sh 'touch nething'

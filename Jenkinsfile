@@ -14,9 +14,9 @@ pipeline {
                 script {
                     def branches = sh(script: 'git branch -r', returnStdout: true).trim()
                     if (!branches.contains("origin/target")) {
-                        sh 'git checkout -b target' // Create new branch
+                        sh 'git checkout -b origin/target' // Create new branch
                     } else {
-                        sh 'git checkout target' // Checkout existing branch
+                        sh 'git checkout origin/target' // Checkout existing branch
                     }
                 }
             }

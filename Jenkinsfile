@@ -28,7 +28,7 @@ pipeline {
                 sh 'git remote set-url origin git@github.com:jaberkh123/test_python.git'
                 sh 'git remote -v'
                 sh 'ls'
-                sh 'touch nething'
+                sh 'touch nething2'
                 sh 'echo jaber > nething '
                 sh 'git config user.name jaberkh123'
                 sh 'git config user.email jaber.khorramshahi@gmail.com'

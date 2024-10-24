@@ -14,7 +14,7 @@ pipeline {
         stage('Checkout Branch') {
             steps {
                 // تغییر به برنچ مورد نظر
-                sh 'git checkout source-branch'
+                sh 'git checkout main'
                 sh 'ls'
             }
         }

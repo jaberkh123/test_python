@@ -36,6 +36,8 @@ pipeline {
         stage('Commit Changes') {
             steps {
                 // افزودن تغییرات
+                sh 'git config user.name "jaberkh123"'
+                sh 'git config user.email "jaber.khorramshahi@gmail.com"'
                 sh 'git add .'
                 // کامیت کردن تغییرات
                 sh 'git commit -m "Copy file from source-branch"'

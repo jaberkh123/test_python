@@ -19,6 +19,19 @@ pipeline {
             }
         }
 
-
+        stage('Checkout Target') {
+            steps {
+                // تغییر به برنچ هدف
+                sh 'git checkout target'
+            }
+        }
+        stage('Commit Changes') {
+            steps {
+                // افزودن تغییرات
+                sh 'git add .'
+                // کامیت کردن تغییرات
+                sh 'git commit -m "Copy file from source-branch"'
+            }
+        }        
 }
 }

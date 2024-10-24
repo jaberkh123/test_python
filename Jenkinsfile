@@ -18,14 +18,7 @@ pipeline {
                 sh 'ls'
             }
         }
-        stage('Create New Branch') {
-            steps {
-                // ساخت برنچ جدید بر پایه برنچ main
-                sh 'git checkout target'
-                // نمایش برنچ‌های موجود برای اطمینان
-                sh 'git branch'
-            }
-        }
+
 
         stage('Checkout Target') {
             steps {

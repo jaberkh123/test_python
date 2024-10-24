@@ -24,6 +24,9 @@ pipeline {
             steps {
                 // تغییر به برنچ هدف
                 sh 'git checkout target'
+                sh 'git branch'
+                sh 'git branch -r'
+                sh 'git branch -a'
             }
         }
         stage('Commit Changes') {

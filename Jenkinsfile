@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // مسیر فایل‌های پایتون در سیستم محلی شما
-                    dir('C:\\Users\\jaber\\Desktop\\send.py') {
+                    dir('E:\\send.py') {
                         sh """
                             git init
                             git remote add origin ${GITHUB_REPO}

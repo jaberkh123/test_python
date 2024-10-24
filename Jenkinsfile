@@ -1,43 +1,35 @@
-
 pipeline {
     agent any
 
     stages {
         stage('Clone Repository') {
             steps {
-                // کلون کردن مخزن
-                
                 git branch: 'main', url: 'https://github.com/jaberkh123/test_python.git'
             }
         }
 
-        stage('Checkout Branch') {
+        stage('Create and Checkout Target Branch') {
             steps {
-                // تغییر به برنچ مورد نظر
-                sh 'git checkout main'
-                sh 'ls'
+                // Check if target branch exists, if not create it
+                script {
+                    def branches = sh(script: 'git branch -r', returnStdout: true).trim()
+                    if (!branches.contains("origin/target")) {
+                        sh 'git checkout -b target' // Create new branch
+                    } else {
+                        sh 'git checkout target' // Checkout existing branch
+                    }
+                }
             }
         }
 
-
-        stage('Checkout Target') {
-            steps {
-                // تغییر به برنچ هدف
-                sh 'git checkout target'
-                sh 'git branch'
-                sh 'git branch -r'
-                sh 'git branch -a'
-            }
-        }
         stage('Commit Changes') {
             steps {
-                // افزودن تغییرات
-                sh 'git config user.name "jaberkh123"'
-                sh 'git config user.email "jaber.khorramshahi@gmail.com"'
+                sh 'git config user.name jaberkh123'
+                sh 'git config user.email jaber.khorramshahi@gmail.com'
                 sh 'git add .'
-                // کامیت کردن تغییرات
                 sh 'git commit -m "Copy file from source-branch"'
+                sh 'git push origin target' // Push to remote
             }
         }        
-}
+    }
 }
